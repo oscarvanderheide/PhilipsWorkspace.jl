@@ -7,7 +7,6 @@ This package is used to read in `workspace.json` files that are exported for eac
 Activate the environment where you want to use this package, enter `Pkg` mode and add the package with the following command:
 
 ```julia
-
 add git@gitlab.op.umcutrecht.nl:computational-imaging-lab/philipsworkspace.git
 ```
 
