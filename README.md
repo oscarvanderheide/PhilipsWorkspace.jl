@@ -36,3 +36,8 @@ EX_PROTO_scan_enable = get_parameter_value("EX_PROTO_scan_enable", workspace)
 VAL_FFE = get_parameter_group("VAL", workspace)
 
 ```
+
+## Todo
+
+- Improve printing of objects/parameters in REPL
+- Add functionality to (fuzzy) search in the workspace
