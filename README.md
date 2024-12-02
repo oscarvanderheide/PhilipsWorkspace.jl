@@ -4,10 +4,10 @@ This package is used to read in `workspace.json` files that are exported for eac
 
 ## Installation
 
-Activate the environment where you want to use this package, enter `Pkg` mode and add the package with the following command:
+This package is registered in Julia's General package registry and can be installed as follows. Activate the environment where you want to use this package, enter `Pkg` mode and add the package with the following command:
 
 ```julia
-add git@gitlab.op.umcutrecht.nl:computational-imaging-lab/philipsworkspace.git
+add PhilipsWorkspace
 ```
 
 ## Functionality
