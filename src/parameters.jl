@@ -53,5 +53,8 @@ function get_parameter_group(group::String, workspace::Workspace)
 end
 
 # If you want to use `Symbol`s rather than `String`s:
-get_parameter_value(name::Symbol, workspace::Workspace) = get_parameter_value(string(name), workspace)
-get_parameter_group(group::Symbol, workspace::Workspace) = get_parameter_group(string(group), workspace)
+get_parameter_value(name::Symbol, workspace::Workspace) =
+    get_parameter_value(string(name), workspace)
+
+get_parameter_group(group::Symbol, workspace::Workspace) =
+    get_parameter_group(string(group), workspace)

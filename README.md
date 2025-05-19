@@ -1,10 +1,15 @@
 # PhilipsWorkspace
 
-This package is used to read in `workspace.json` files that are exported for each scan with the UMCU Raw Export Tool. The workspace contains all parameter values, object and enumerations. This package uses `JSON.jl` to read in the `.json` file as a Dict and provides functionality to extract objects and parameters in a convenient (`NamedTuple`-based) format.
+This package is used to read in `workspace.json` files that are exported for each scan with
+the UMCU Raw Export Tool. The workspace contains all parameter values, object and
+enumerations. This package uses `JSON.jl` to read in the `.json` file as a Dict and provides
+functionality to extract objects and parameters in a convenient (`NamedTuple`-based) format.
 
 ## Installation
 
-This package is registered in Julia's General package registry and can be installed as follows. Activate the environment where you want to use this package, enter `Pkg` mode and add the package with the following command:
+This package is registered in Julia's General package registry and can be installed as
+follows. Activate the environment where you want to use this package, enter `Pkg` mode and
+add the package with the following command:
 
 ```julia
 add PhilipsWorkspace

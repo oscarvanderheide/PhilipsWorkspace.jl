@@ -61,5 +61,8 @@ function get_all_objects_of_type(type::String, workspace::Workspace)
 end
 
 # If you want to use `Symbol`s rather than `String`s:
-get_object(type::Symbol, instance::Symbol, workspace::Workspace) = get_object(string(type), string(instance), workspace)
-get_all_objects_of_type(type::Symbol, workspace::Workspace) = get_all_objects_of_type(string(type), workspace)
+get_object(type::Symbol, instance::Symbol, workspace::Workspace) =
+    get_object(string(type), string(instance), workspace)
+
+get_all_objects_of_type(type::Symbol, workspace::Workspace) =
+    get_all_objects_of_type(string(type), workspace)
