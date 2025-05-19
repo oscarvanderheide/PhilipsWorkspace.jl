@@ -12,11 +12,9 @@ Reads a workspace from a JSON file that is exported using the UMCU Raw Export To
   integers in the workspace are replaced with their corresponding enumeration values.
 
 # Example
-```julia
-workspace = read_workspace("/path/to/workspace")
+    workspace = read_workspace("/path/to/workspace")
 """
 function read_workspace(path_to_workspace_file::String)
-
     # Remove extension from path, if any
     path, _ = splitext(path_to_workspace_file)
 

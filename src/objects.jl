@@ -12,13 +12,11 @@ Extracts attribute names and values for a specific object instance in a workspac
 A named tuple with attribute names as symbols and attribute values.
 
 # Example
-GR_s_ex = get_object("GR", "s_ex", workspace)
-GR_s_ex.str
+    GR_s_ex = get_object("GR", "s_ex", workspace)
+    GR_s_ex.str
 """
 function get_object(type::String, instance::String, workspace::Workspace)
-
     # todo: composite objects
-
     object_raw = workspace["ObjectWorkspace"][type]["Instances"][instance]["AttributeValues"]
 
     # extract attribute names and values
@@ -34,8 +32,6 @@ function get_object(type::String, instance::String, workspace::Workspace)
     return NamedTuple(Symbol.(attribute_names) .=> attribute_values)
 end
 
-
-
 """
     get_all_objects_of_type(type, workspace)
 
@@ -49,11 +45,10 @@ Get all objects of a specific type from the workspace.
 A named tuple where the keys are the names of the instances and the values are the objects.
 
 # Example
-GR = get_all_objects_of_type("GR", workspace)
-GR.s_ex.str
+    GR = get_all_objects_of_type("GR", workspace)
+    GR.s_ex.str
 """
 function get_all_objects_of_type(type::String, workspace::Workspace)
-
     instances = workspace["ObjectWorkspace"][type]["Instances"]
     objects = [get_object(type, instance, workspace) for instance in keys(instances)]
 
