@@ -1,4 +1,31 @@
 """
+    _clean_and_parse(workspace_path::AbstractString)
+
+Parses a JSON file that may contain non-standard floating point values
+like `inf`, `-inf`, and `nan`. These values are replaced with `null`
+before parsing.
+
+# Arguments
+- `workspace_path::AbstractString`: The path to the JSON file.
+
+# Returns
+- A Dict with the parsed JSON object.
+"""
+function _clean_and_parse(workspace_path::AbstractString)
+    
+    # Read the entire file into a single string.
+    json_string = read(workspace_path, String)
+
+    # Use a regular expression to replace non-standard values with `null`.
+    # This regex handles `inf`, `-inf`, `infinity`, `-infinity`, and `nan`
+    # in a case-insensitive manner. The `\b` ensures we only match whole words.
+    cleaned_string = replace(json_string, r"\b(-?inf(inity)?|nan)\b"i => "null")
+
+    # Parse the cleaned string into a Dict
+    return JSON.parse(cleaned_string)
+end
+
+"""
     _replace_enumerations!(workspace::Workspace)
 
 For parameters whose datatype is an enumeration, replace the integer values in the workspace

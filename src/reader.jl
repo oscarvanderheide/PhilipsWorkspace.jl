@@ -18,8 +18,8 @@ function read_workspace(path_to_workspace_file::String)
     # Remove extension from path, if any
     path, _ = splitext(path_to_workspace_file)
 
-    # Read in the JSON file
-    workspace = JSON.parsefile("$path.json")
+    # Clean and parse the JSON file
+    workspace = clean_and_parse("$path.json")
 
     # Wrap the workspace in a Workspace struct
     workspace = Workspace(workspace)
