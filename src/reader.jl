@@ -19,7 +19,7 @@ function read_workspace(path_to_workspace_file::String)
     path, _ = splitext(path_to_workspace_file)
 
     # Clean and parse the JSON file
-    workspace = clean_and_parse("$path.json")
+    workspace = _clean_and_parse("$path.json")
 
     # Wrap the workspace in a Workspace struct
     workspace = Workspace(workspace)
